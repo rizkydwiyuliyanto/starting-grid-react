@@ -7,7 +7,7 @@ class Lights extends React.Component{
     }
     render() {
         const styled = {
-            color:(x) => {
+            redLight:(x) => {
                 let color="";
                 if (x == 1){
                     color = "red"
@@ -21,12 +21,17 @@ class Lights extends React.Component{
                     color = "red";
                 }
                 return color
+            },
+            greenLight:()=> {
+                let color = "grey";
+                return color;
             }
         }
+        
         return (
-            <Light style={this.props.Start?{background:styled.color(this.props.Color)}:{background:"#009900"}}>
-            
-            </Light>
+            <Light 
+                style={this.props.Start?{background:styled.redLight(this.props.Color)}:{background: styled.greenLight()}}
+            />
         )
     }
 }
@@ -34,7 +39,7 @@ const Light = styled.div `
     width: 50px;
     height: 50px;
     border-radius: 50%;
-     background: black;
+     background: grey;
     margin:0.5em 0;
 `
 

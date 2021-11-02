@@ -1,46 +1,33 @@
 import React from 'react';
 import styled from 'styled-components';
- 
+
+
+
 class Time extends React.Component {
     constructor(props){
         super(props);
-        this.state = {
-            second : 0,
-            second2 : 0,
-            miliSecond: 0,
-            miliSecond2: 0,
-            miliSecond3: 0,
-        }
-       
     }
-    myInterval(){
-        this.setState({second: this.state.second+1});
-    }
-    componentWillMount(){
-        if (!this.props.S){
-            this.myInterval()
-        }
-    }
-    componentWillUnmount(){
-        if (!this.props.S){
-            this.myInterval()
-        }
-    }
-
+   
     render (){
-        console.log(this.props.StartTime)
+
         return (
             <Parent>
-                <p>{this.state.second}</p>
+                <p style={!this.props.Start?{color:"#e60000"}:{color:"black"}}>{this.props.children}</p>
             </Parent>
         )
     }
 }
 const Parent = styled.div `
-      height: 10%;
+      height: 50%;
       border: unset;
+      color: black;
       p {
-          font-size: 2rem;
+          font-size: 2.5rem;
+          font-weight: 300;
+         
+          span {
+              font-size: 2rem;
+          }
       }
 `
 

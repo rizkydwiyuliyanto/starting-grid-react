@@ -16,7 +16,8 @@ class Header extends React.Component{
 const Parent = styled.div `
     width: 50%;
     text-align: center;
-    height: 20%;
+    height: auto;
     border: unset;
+    
 `
 export default Header;

@@ -14,13 +14,14 @@ class Board extends React.Component {
     }
 }
 const BoardParent = styled.div `
-  background-color: none;
+  background-color: #0f0f0a;
   padding:0 1em;
   width: 10%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 5px;
- 
+  border-radius: 10px;
+  position: static;
+  z-index: 10;
 `
 export default Board;
